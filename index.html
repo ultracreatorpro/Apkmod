@@ -27,6 +27,12 @@
         header h1 {
             font-size: 20px;
         }
+        .external-link-icon, .theme-toggle {
+            font-size: 24px;
+            cursor: pointer;
+            color: white;
+            margin-left: 10px;
+        }
         .external-link-icon {
             font-size: 24px;
             cursor: pointer;
@@ -122,6 +128,7 @@
             <h1>JUEGOS & APKS MOD</h1>
         </div>
         <a href="https://t.me/ApkAndroideHacking" target="_blank" class="external-link-icon">🔗</a>
+        <span class="theme-toggle" onclick="toggleTheme()">🌞</span>
     </header>
 
     <!-- Contenedor de búsqueda -->
@@ -166,6 +173,21 @@
     </div>
 
     <script>
+    function toggleTheme() {
+        const body = document.body;
+        const themeToggle = document.querySelector('.theme-toggle');
+        
+        // Alterna entre fondo oscuro y claro
+        if (body.style.backgroundColor === 'black') {
+            body.style.backgroundColor = 'white';
+            body.style.color = 'black';
+            themeToggle.textContent = '🌞'; // Icono de sol para el modo claro
+        } else {
+            body.style.backgroundColor = 'black';
+            body.style.color = 'white';
+            themeToggle.textContent = '🌜'; // Icono de luna para el modo oscuro
+        }
+    }
     document.addEventListener("DOMContentLoaded", function() {
         const searchInput = document.querySelector(".search-container input");
         const cards = document.querySelectorAll(".card");
