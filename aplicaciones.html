@@ -4,6 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Juegos</title>
+
+    <!-- Meta etiquetas de SEO -->
+    <meta name="description" content="Descarga los mejores juegos y APKs modificados con monedas y gemas ilimitadas. ¡Explora una amplia colección y disfruta de tus juegos favoritos!">
+    <meta name="keywords" content="juegos, APKs, mods, aplicaciones, Clash of Clans, descargas, gemas ilimitadas">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Juegos y APKS MOD">
+    <meta property="og:title" content="Juegos y APKS MOD - Descarga juegos y aplicaciones modificadas">
+    <meta property="og:description" content="Explora nuestra colección de juegos y aplicaciones modificadas con características especiales. ¡Descarga ahora!">
+    <meta property="og:image" content="https://i.ibb.co/6yxGKSn/20241106-024755-0000.png">
+    <meta property="og:url" content="https://apksyjuegosmodificados.serviciosonlines.com">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Juegos y APKS MOD">
+    <meta name="twitter:description" content="Descarga juegos y APKs modificados con monedas y gemas ilimitadas.">
+    <meta name="twitter:image" content="https://i.ibb.co/6yxGKSn/20241106-024755-0000.png">
+    
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VJVSMGRHPV"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-VJVSMGRHPV');
+</script>
     <style>
         /* Estilos generales */
         body {
@@ -18,11 +43,12 @@
             color: white;
             display: flex;
             align-items: center;
-            justify-content: space-between;
+            justify-content: flex-start;
+            gap: 60px;
         }
         header img {
-            height: 40px;
-            margin-right: 10px;
+            height: 50px;
+            margin-right: 8px;
         }
         header h1 {
             font-size: 20px;
@@ -32,38 +58,47 @@
             cursor: pointer;
             text-decoration: none;
             color: white;
+            margin-left: 35px;
+        }
+        .external-link-icon, .theme-toggle {
+            font-size: 28px;
+            cursor: pointer;
+            color: white;
+            margin-left: 35px;
         }
         /* Contenedor de búsqueda */
         .search-container {
             padding: 10px;
-            background-color: #f4f4f4;
+            background-color: #e3e1e1;
             text-align: center;
         }
         .search-container input {
             padding: 10px;
-            width: 80%;
+            width: 85%;
             border: 1px solid #ddd;
-            border-radius: 5px;
+            border-radius: 15px;
         }
         /* Tarjetas de juegos */
         .cards {
-    display: flex;
-    justify-content: center;
-    align-items: center; /* Centra verticalmente si el contenedor tiene más altura */
-    margin: auto;
-    padding: 10px;
-}
+           display: flex;
+           background-color: #e3e1e1;
+           flex-wrap: wrap;
+           justify-content: flex-start;
+           max-width: 1000px; /* Puedes ajustar este ancho según tu diseño */
+           margin: 0 auto; /* Centra el contenedor */
+           padding: 10px;
+           gap: 10px;
+        }
 
-.card {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    width: 250px; /* Ajusta el ancho según sea necesario */
-    max-width: 90%; /* Asegura que sea responsivo */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    padding: 15px;
-    text-align: center;
-}
+        .card {
+           background-color: #fff;
+           border: 1px solid #ddd;
+           border-radius: 5px;
+           width: calc(42% - 10px);
+           box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+           padding: 15px;
+           text-align: center;
+        }
 
         .card img {
             width: 100%;
@@ -71,15 +106,15 @@
             border-radius: 15px;
         }
         .card h2 {
-            font-size: 18px;
+            font-size: 14px;
             color: #333;
         }
         .card h3 {
-            font-size: 16px;
+            font-size: 13px;
             color: #555;
         }
         .card p {
-            font-size: 13px;
+            font-size: 12px;
             color: #777;
         }
         .card button {
@@ -93,7 +128,7 @@
         }
         /* Menú inferior */
         .footer-menu {
-            background-color: #333;
+            background-color: #424242;
             color: white;
             display: flex;
             justify-content: space-around;
@@ -112,6 +147,18 @@
             font-size: 20px;
             margin-bottom: 5px;
         }
+
+        /* Contenido principal */
+        main {
+            flex: 1;
+            padding: 20px;
+        }
+        footer {
+            background-color: #28a745;
+            color: #fff;
+            padding: 0.5px 5px;
+            text-align: center;
+        }
     </style>
 </head>
 <body>
@@ -119,10 +166,10 @@
     <!-- Encabezado -->
     <header>
         <div style="display: flex; align-items: center;">
-            <img src="https://cdn-icons-png.flaticon.com/512/10627/10627206.png" alt="Logo">
+            <img src="https://i.ibb.co/6yxGKSn/20241106-024755-0000.png" alt="Logo">
             <h1>JUEGOS & APKS MOD</h1>
         </div>
-        <a href="https://pagina-externa.com" target="_blank" class="external-link-icon">🔗</a>
+        <span class="theme-toggle" onclick="toggleTheme()">🌞</span>
     </header>
 
     <!-- Contenedor de búsqueda -->
@@ -130,7 +177,7 @@
         <input type="text" placeholder="Buscar juegos...">
     </div>
 
-<!-- Tarjetas de juegos -->
+    <!-- Tarjetas de juegos -->
     <div class="cards">
     <div class="card">
         <img src="https://i.ibb.co/0DBm2Wr/photo-5006216096876965558-x.jpg" alt="Cine Play">
@@ -150,6 +197,11 @@
     </div>
 </div>
 
+    <!-- Pie de página -->
+    <footer>
+        <p>© 2024 Juegos y Apks Mod. Todos los derechos reservados.</p>
+    </footer>
+
     <!-- Menú inferior -->
     <div class="footer-menu">
         <div onclick="openSection('juegos')">
@@ -167,6 +219,21 @@
     </div>
 
     <script>
+    function toggleTheme() {
+        const body = document.body;
+        const themeToggle = document.querySelector('.theme-toggle');
+        
+        // Alterna entre fondo oscuro y claro
+        if (body.style.backgroundColor === 'black') {
+            body.style.backgroundColor = 'white';
+            body.style.color = 'black';
+            themeToggle.textContent = '🌞'; // Icono de sol para el modo claro
+        } else {
+            body.style.backgroundColor = 'black';
+            body.style.color = 'white';
+            themeToggle.textContent = '🌜'; // Icono de luna para el modo oscuro
+        }
+    }
     document.addEventListener("DOMContentLoaded", function() {
         const searchInput = document.querySelector(".search-container input");
         const cards = document.querySelectorAll(".card");
@@ -183,7 +250,6 @@
     function openSection(section) {
         // Lógica para cambiar de sección. Puedes ajustar cada sección según tu necesidad.
         if (section === 'juegos') {
-            window.location.href = 'index.html'; // Redirige a juegos.html
         } else if (section === 'aplicaciones') {
             window.location.href = 'aplicaciones.html'; // Redirige a aplicaciones.html
         } else if (section === 'telegram') {
