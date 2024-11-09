@@ -21,40 +21,52 @@
     <meta name="twitter:image" content="https://i.ibb.co/6yxGKSn/20241106-024755-0000.png">
     
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VJVSMGRHPV"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-VJVSMGRHPV');
-    </script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VJVSMGRHPV"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
+  gtag('config', 'G-VJVSMGRHPV');
+</script>
     <style>
+        /* Estilos generales */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
         }
+        /* Encabezado */
         header {
             background-color: #28a745;
             padding: 10px;
             color: white;
             display: flex;
             align-items: center;
+            justify-content: flex-start;
             gap: 60px;
         }
         header img {
             height: 50px;
+            margin-right: 8px;
         }
         header h1 {
             font-size: 20px;
         }
-        .theme-toggle {
+        .external-link-icon {
+            font-size: 24px;
+            cursor: pointer;
+            text-decoration: none;
+            color: white;
+            margin-left: 35px;
+        }
+        .external-link-icon, .theme-toggle {
             font-size: 28px;
             cursor: pointer;
             color: white;
             margin-left: 35px;
         }
+        /* Contenedor de búsqueda */
         .search-container {
             padding: 10px;
             background-color: #e3e1e1;
@@ -63,31 +75,58 @@
         .search-container input {
             padding: 10px;
             width: 85%;
+            border: 1px solid #ddd;
             border-radius: 15px;
         }
+        /* Tarjetas de juegos */
         .cards {
            display: flex;
            background-color: #e3e1e1;
            flex-wrap: wrap;
            justify-content: flex-start;
-           max-width: 1000px;
-           margin: 0 auto;
+           max-width: 1000px; /* Puedes ajustar este ancho según tu diseño */
+           margin: 0 auto; /* Centra el contenedor */
            padding: 10px;
            gap: 10px;
         }
+
         .card {
            background-color: #fff;
+           border: 1px solid #ddd;
            border-radius: 5px;
            width: calc(42% - 10px);
            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
            padding: 15px;
            text-align: center;
         }
+
         .card img {
             width: 100%;
             height: auto;
             border-radius: 15px;
         }
+        .card h2 {
+            font-size: 14px;
+            color: #333;
+        }
+        .card h3 {
+            font-size: 13px;
+            color: #555;
+        }
+        .card p {
+            font-size: 12px;
+            color: #777;
+        }
+        .card button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 10px;
+            width: 100%;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        /* Menú inferior */
         .footer-menu {
             background-color: #424242;
             color: white;
@@ -100,7 +139,25 @@
         }
         .footer-menu div {
             text-align: center;
+            font-size: 14px;
             cursor: pointer;
+        }
+        .footer-menu div i {
+            display: block;
+            font-size: 20px;
+            margin-bottom: 5px;
+        }
+
+        /* Contenido principal */
+        main {
+            flex: 1;
+            padding: 20px;
+        }
+        footer {
+            background-color: #28a745;
+            color: #fff;
+            padding: 0.5px 5px;
+            text-align: center;
         }
     </style>
 </head>
@@ -148,15 +205,15 @@
     <!-- Menú inferior -->
     <div class="footer-menu">
         <div onclick="openSection('juegos')">
-            <i>🔴</i>
+            <i class="home-icon">🔴</i>
             <span>Juegos</span>
         </div>
         <div onclick="openSection('aplicaciones')">
-            <i>🟡</i>
+            <i class="app-icon">🟡</i>
             <span>Aplicaciones</span>
         </div>
         <div onclick="openSection('telegram')">
-            <i>🟢</i>
+            <i class="telegram-icon">🟢</i>
             <span>Telegram</span>
         </div>
     </div>
@@ -165,17 +222,18 @@
     function toggleTheme() {
         const body = document.body;
         const themeToggle = document.querySelector('.theme-toggle');
+        
+        // Alterna entre fondo oscuro y claro
         if (body.style.backgroundColor === 'black') {
             body.style.backgroundColor = 'white';
             body.style.color = 'black';
-            themeToggle.textContent = '🌞';
+            themeToggle.textContent = '🌞'; // Icono de sol para el modo claro
         } else {
             body.style.backgroundColor = 'black';
             body.style.color = 'white';
-            themeToggle.textContent = '🌜';
+            themeToggle.textContent = '🌜'; // Icono de luna para el modo oscuro
         }
     }
-
     document.addEventListener("DOMContentLoaded", function() {
         const searchInput = document.querySelector(".search-container input");
         const cards = document.querySelectorAll(".card");
@@ -190,14 +248,15 @@
     });
 
     function openSection(section) {
-        if (section === 'juegos') {
-            window.location.href = '#juegos';
-        } else if (section === 'aplicaciones') {
-            window.location.href = 'aplicaciones.html';
-        } else if (section === 'telegram') {
-            window.location.href = 'https://t.me/ApkAndroideHacking';
-        }
+    if (section === 'juegos') {
+        window.location.href = 'index.html'; // Redirige a index.html
+    } else if (section === 'aplicaciones') {
+        window.location.href = 'aplicaciones.html'; // Redirige a aplicaciones.html
+    } else if (section === 'telegram') {
+        window.location.href = 'https://t.me/ApkAndroideHacking'; // Enlace a Telegram
     }
+}
+
     </script>
 
 </body>
